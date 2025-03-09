@@ -1,0 +1,46 @@
+{% extends "nav.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<body>
+    <!-- About Section -->
+    <div class="about-container">
+        <h1>About Me</h1>
+        <p>
+            Hello! I'm Akshay K, a Python Developer focused on Django Backend Development. As a fresher, I build scalable web applications with Django, REST APIs, and databases.
+        </p>.
+
+
+        <!-- Skills Section -->
+        <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill-box">Python</div>
+            <div class="skill-box">Django</div>
+            <div class="skill-box">JavaScript</div>
+            <div class="skill-box">React</div>
+            <div class="skill-box">Bootstrap</div>
+            <div class="skill-box">Git</div>
+        </div>
+        <br>
+        <!-- Mission Statement -->
+        <h2>My Mission</h2>
+        <p>
+            I strive to develop efficient, scalable, and impactful software solutions. My goal is to 
+            contribute to meaningful projects that enhance user experiences and drive innovation.
+        </p>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="contact-info">
+            <p><strong>Email:</strong> akshaysuresan02@gmail.com</p>
+            <p><strong>Phone:</strong> +91-9496161938</p>
+
+            <div class="social-links">
+                <a href="{{ linked_in }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="{{ github }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+{% endblock %}

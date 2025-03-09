@@ -1,0 +1,36 @@
+{% extends "nav.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<section id="contacting">
+    <div class="contact-container">
+        <h3>Let's Connect!</h3>
+        <p>Reach out for collaborations, projects, or just a chat. I'd love to hear from you! 😊</p>
+
+        <div class="contact-info1 ">
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> akshaysuresan02@gmail.com</p>
+            <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91- 9496161938</p>
+
+            <div class="social-links1">
+                <a href="{{ linked_in }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="{{ github }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+
+        <!-- Optional: Contact Form -->
+        <div class="contact-form">
+            <h4>Send a Message</h4>
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="butt">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+ 
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Akshay K | Python & Django Developer</title>
+    <link rel="stylesheet" href="{% static 'css/ee.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul id="menuList">
+            <li><a href="{% url 'home' %}">Home</a> </li>
+            <li><a href="{% url 'project' %}">Project</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+
+        </div>
+    </nav>
+    <section id="hero">
+        <h1>Hello, I'm <span>Akshay K</span></h1>
+        <h2>Aspiring <span>Python & Django Developer</span></h2>
+        <p>
+            Passionate about web development, problem-solving, and building impactful applications.  
+            Eager to learn and contribute to innovative projects!
+        </p>
+        <br>
+        <a href="{% url 'project' %}" class="butt">View My Work</a>
+        <a href="{% url 'contact' %}" class="butt">Contact</a>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul class="skills-list" type="none">
+            <li>Python (Django)</li>
+            <li>Frontend (HTML, CSS, JavaScript, React)</li>
+            <li>Databases (MySQL, PostgreSQL, SQLite)</li>
+            <li>APIs & RESTful Services</li>
+            <li>Git & GitHub</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>Check out some of the projects I've worked on.</p>
+        <br>
+        <a href="{% url 'project' %}" class="button">View All Projects</a>
+    </section>
+
+    <section id="contact">
+        <h3>Contact Me</h3>
+        <p>Feel free to reach out for collaborations or just to say hello! 😊</p>
+    
+        <div class="contact-info">
+            <p><strong>Email:</strong> akshaysuresan02@gmail.com</p>
+            <p><strong>Phone:</strong> +91-9496161938</p>
+    
+            <div class="social-links">
+                <a href="{% if linked_in %}{{ linked_in }}{% else %}https://linkedin.com{% endif %}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="{% if github %}{{ github }}{% else %}https://github.com{% endif %}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'js/menu.js' %}"></script> 
+    <script src="{% static 'js/ani.js' %}"></script> 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</body>
+</html>

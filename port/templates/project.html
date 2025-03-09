@@ -1,0 +1,41 @@
+{% extends "nav.html" %}
+{% load static %}
+{% block content %}
+<body>
+    <!-- Centered Heading -->
+    <link rel="stylesheet" href="{% static 'css/project.css' %}"/>
+    <div class="container mt-5 pt-4">
+        <h2 class="text-center mb-4">My Projects</h2>
+
+        <!-- Dynamic Project Boxes -->
+        <div class="container">
+            {% for project in projects %}
+                <div class="box box{{ forloop.counter|divisibleby:3|yesno:"1,2,3" }}">
+                    <h5 class="text-light">{{ project.title }}</h5>
+                    <p class="text-white">{{ project.description }}</p>
+                    {% if project.link %}
+                        <a href="{{ project.link }}" target="_blank" class="btn btn-light text-primary px-4 py-2 rounded-pill">
+                            View Project
+                        </a>
+                    {% endif %}
+                </div>
+            {% empty %}
+                <p class="text-center text-danger">No projects available.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="contact-info">
+            <p><strong>Email:</strong> akshaysuresan02@gmail.com</p>
+            <p><strong>Phone:</strong> +91-9496161938</p>
+
+            <div class="social-links">
+                <a href="{{ linked_in }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="{{ github }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+{% endblock %}

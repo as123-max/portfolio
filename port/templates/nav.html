@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/ee.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul id="menuList">
+            <li><a href="{% url 'home' %}">Home</a> </li>
+            <li><a href="{% url 'project' %}">Project</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/menu.js' %}"></script> 
+</body>
+</html>
